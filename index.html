@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cover Letter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app" :class="{ dark: isDark }">
+    <header>
+      <h1>{{ title }}</h1>
+      <button @click="toggleDarkMode" class="mode-toggle">
+        {{ isDark ? '라이트 모드' : '다크 모드' }}
+      </button>
+    </header>
+    <main>
+      <section>
+        <h2>About Me</h2>
+        <p>{{ intro }}</p>
+      </section>
+      <button @click="toggleContact" class="contact-toggle">
+        {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
+      </button>
+      <transition name="fade">
+        <section v-if="showContact">
+          <h2>Contact</h2>
+          <p>Email: <a :href="`mailto:${email}`">{{ email }}</a></p>
+        </section>
+      </transition>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
