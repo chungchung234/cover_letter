@@ -12,3 +12,7 @@ switch themes and the **contact toggle** to reveal contact details.
 3. Your site will be available at `https://<your-username>.github.io/<repository-name>/`.
 
 You can customize the contents in `main.js` and the style in `style.css`.
+
+## Development
+This project follows **Trunk-Based Development**. All changes are integrated
+directly into the `main` branch in small, incremental commits.
