@@ -17,16 +17,26 @@
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>
     </header>
+    <nav class="page-nav">
+      <a href="#intro">소개</a>
+      <a href="#tech">기술 스택</a>
+      <a href="#experience">경력</a>
+      <a href="#education">학력</a>
+      <a href="#certs">자격증 &amp; 교육</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#philosophy">기술 철학</a>
+      <a href="#cover">자기소개서</a>
+    </nav>
     <main>
-      <section class="hero">
+      <section id="hero" class="hero">
         <img src="profile.jpg" class="profile-image" :alt="`${name} 프로필 사진`">
         <p class="tagline">열정적인 웹 개발자입니다.</p>
       </section>
-      <section>
+      <section id="intro">
         <h2>소개</h2>
         <p>{{ summary }}</p>
       </section>
-      <section>
+      <section id="tech">
         <h2>기술 스택</h2>
         <ul>
           <li v-for="tech in techStack">
@@ -34,7 +44,7 @@
           </li>
         </ul>
       </section>
-      <section>
+      <section id="experience">
         <h2>경력</h2>
         <div v-for="exp in experiences" class="experience">
           <h3>{{ exp.company }} | {{ exp.role }}</h3>
@@ -44,17 +54,17 @@
           </ul>
         </div>
       </section>
-      <section>
+      <section id="education">
         <h2>학력</h2>
         <p>{{ education }}</p>
       </section>
-      <section>
+      <section id="certs">
         <h2>자격증 &amp; 교육</h2>
         <ul>
           <li v-for="cert in certificates">{{ cert }}</li>
         </ul>
       </section>
-      <section class="projects">
+      <section id="projects" class="projects">
         <h2>기타 프로젝트 / 수상</h2>
         <div class="projects-grid">
           <div class="project-card" v-for="pr in projects" :key="pr.title">
@@ -64,11 +74,11 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="philosophy">
         <h2>기술 철학</h2>
         <p>{{ philosophy }}</p>
       </section>
-      <section>
+      <section id="cover">
         <h2>자기소개서</h2>
         <p v-for="p in intro">{{ p }}</p>
       </section>
@@ -76,7 +86,7 @@
         {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
       </button>
       <transition name="fade">
-        <section v-if="showContact" class="contact">
+        <section v-if="showContact" id="contact" class="contact">
           <h2>Contact</h2>
           <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
           <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
