@@ -63,9 +63,24 @@ createApp({
         'NIA 공공 빅데이터 분석 청년인재 과정 수료 (2021.07 – 2021.08)'
       ],
       projects: [
-        '부동산 중개 앱 ‘꿀방’ 기획 및 개발',
-        'NIA 빅데이터 해커톤 참가',
-        '학부 동아리 회장 및 발표·기획 다수 경험'
+        {
+          title: '부동산 중개 앱 \u2018꿀방\u2019',
+          link: '#',
+          description: '기획부터 개발까지 진행한 부동산 중개 애플리케이션',
+          screenshot: null
+        },
+        {
+          title: 'NIA 빅데이터 해커톤',
+          link: '#',
+          description: '데이터 분석 아이디어 공모전에 참가하여 팀 프로젝트 진행',
+          screenshot: null
+        },
+        {
+          title: '학부 동아리 활동',
+          link: '#',
+          description: '동아리 회장으로 기획과 발표를 다수 경험',
+          screenshot: null
+        }
       ],
       philosophy: '반복되는 비효율을 줄이는 설계가 최고의 협업이다.',
       intro: [
