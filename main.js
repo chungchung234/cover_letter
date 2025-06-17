@@ -10,6 +10,30 @@ createApp({
       showContact: false
     };
   },
+  mounted() {
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    this.isDark = mql.matches;
+    const handler = (e) => {
+      this.isDark = e.matches;
+    };
+    if (mql.addEventListener) {
+      mql.addEventListener('change', handler);
+    } else if (mql.addListener) {
+      mql.addListener(handler);
+    }
+    this._schemeHandler = { mql, handler };
+  },
+  beforeUnmount() {
+    const data = this._schemeHandler;
+    if (data) {
+      const { mql, handler } = data;
+      if (mql.removeEventListener) {
+        mql.removeEventListener('change', handler);
+      } else if (mql.removeListener) {
+        mql.removeListener(handler);
+      }
+    }
+  },
   methods: {
     toggleDarkMode() {
       this.isDark = !this.isDark;
