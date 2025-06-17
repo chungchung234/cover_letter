@@ -57,6 +57,33 @@ button:hover {
   background-color: #005fa3;
 }
 
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero .profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero .tagline {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+@media (min-width: 600px) {
+  .hero .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
