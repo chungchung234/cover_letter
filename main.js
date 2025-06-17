@@ -128,3 +128,27 @@ createApp({
     }
   }
 }).mount('#app');
+
+const navLinks = document.querySelectorAll('.page-nav a');
+const sections = document.querySelectorAll('main section[id]');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+sections.forEach(section => observer.observe(section));
+
