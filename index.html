@@ -49,11 +49,15 @@
           <li v-for="cert in certificates">{{ cert }}</li>
         </ul>
       </section>
-      <section>
+      <section class="projects">
         <h2>기타 프로젝트 / 수상</h2>
-        <ul>
-          <li v-for="pr in projects">{{ pr }}</li>
-        </ul>
+        <div class="projects-grid">
+          <div class="project-card" v-for="pr in projects" :key="pr.title">
+            <img v-if="pr.screenshot" :src="pr.screenshot" :alt="pr.title + ' screenshot'">
+            <h3><a :href="pr.link" target="_blank">{{ pr.title }}</a></h3>
+            <p>{{ pr.description }}</p>
+          </div>
+        </div>
       </section>
       <section>
         <h2>기술 철학</h2>
