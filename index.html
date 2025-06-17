@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이충현 | Web Developer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-olstxZld0df6OwLKhPNgm6kKiC9JIhbSAVnX1nvUs61f7o+Jfm6D/Ejko116IhVQbKXtEOi33ECszP2vCux/JQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body>
@@ -73,9 +74,9 @@
       <transition name="fade">
         <section v-if="showContact" class="contact">
           <h2>Contact</h2>
-          <p>Email: <a :href="`mailto:${email}`">{{ email }}</a></p>
-          <p>Phone: <a :href="`tel:${phone}`">{{ phone }}</a></p>
-          <p><a :href="github" target="_blank">GitHub</a></p>
+          <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
+          <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
+          <p><i class="fa-brands fa-github"></i> <a :href="github" target="_blank">GitHub</a></p>
         </section>
       </transition>
     </main>
