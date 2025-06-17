@@ -3,30 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cover Letter</title>
+  <title>이충현 | Web Developer</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body>
   <div id="app" :class="{ dark: isDark }">
     <header>
-      <h1>{{ title }}</h1>
+      <h1>{{ name }} | {{ role }}</h1>
+      <p class="location">{{ location }}</p>
       <button @click="toggleDarkMode" class="mode-toggle">
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>
     </header>
     <main>
       <section>
-        <h2>About Me</h2>
-        <p>{{ intro }}</p>
+        <h2>소개</h2>
+        <p>{{ summary }}</p>
+      </section>
+      <section>
+        <h2>기술 스택</h2>
+        <ul>
+          <li v-for="tech in techStack">
+            <strong>{{ tech.category }}:</strong> {{ tech.skills }}
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>경력</h2>
+        <div v-for="exp in experiences" class="experience">
+          <h3>{{ exp.company }} | {{ exp.role }}</h3>
+          <p class="dates">{{ exp.dates }}</p>
+          <ul>
+            <li v-for="detail in exp.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2>학력</h2>
+        <p>{{ education }}</p>
+      </section>
+      <section>
+        <h2>자격증 &amp; 교육</h2>
+        <ul>
+          <li v-for="cert in certificates">{{ cert }}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>기타 프로젝트 / 수상</h2>
+        <ul>
+          <li v-for="pr in projects">{{ pr }}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>기술 철학</h2>
+        <p>{{ philosophy }}</p>
+      </section>
+      <section>
+        <h2>자기소개서</h2>
+        <p v-for="p in intro">{{ p }}</p>
       </section>
       <button @click="toggleContact" class="contact-toggle">
         {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
       </button>
       <transition name="fade">
-        <section v-if="showContact">
+        <section v-if="showContact" class="contact">
           <h2>Contact</h2>
           <p>Email: <a :href="`mailto:${email}`">{{ email }}</a></p>
+          <p>Phone: <a :href="`tel:${phone}`">{{ phone }}</a></p>
+          <p><a :href="github" target="_blank">GitHub</a></p>
         </section>
       </transition>
     </main>
