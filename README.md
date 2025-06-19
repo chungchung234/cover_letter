@@ -28,3 +28,12 @@ include a photo, you can remove the `<img>` tag entirely.
 
 Before sharing the page publicly, you may remove or anonymize sensitive data
 from `main.js` such as your phone number or email address.
+
+## Running Tests
+To run the Python unit tests, execute:
+
+```bash
+python -m unittest
+```
+
+This will run all tests found in the `tests/` folder.
