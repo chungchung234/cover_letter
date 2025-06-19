@@ -36,4 +36,4 @@ To run the Python unit tests, execute:
 python -m unittest
 ```
 
-This will run all tests found in the `tests/` folder.
+This command runs both tests located in the `tests/` folder.
