@@ -74,3 +74,29 @@ main section {
   margin-bottom: 2rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+.color-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.color-tooltip .tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: -1.75rem;
+  transform: translateX(-50%);
+  background-color: var(--color-card-bg);
+  color: var(--color-text-main);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.color-tooltip:hover .tooltip {
+  display: block;
+}
+.flag-icon {
+  margin-right: 0.25rem;
+}
