@@ -206,7 +206,7 @@ app.component('project-card', {
   `
 });
 
-app.mount('#app');
+app.mount('#app-root');
 
 const nav = document.querySelector('.page-nav');
 const navLinks = document.querySelectorAll('.page-nav a');

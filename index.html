@@ -40,7 +40,8 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-  <div id="app" :class="{ dark: isDark }" class="mx-auto p-4 sm:p-6 lg:p-8 max-w-3xl sm:max-w-4xl lg:max-w-6xl bg-background text-text-main rounded-lg shadow">
+  <div id="app-root">
+    <div id="app" :class="{ dark: isDark }" class="mx-auto p-4 sm:p-6 lg:p-8 max-w-3xl sm:max-w-4xl lg:max-w-6xl bg-background text-text-main rounded-lg shadow">
     <header class="text-center mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold mb-1">{{ name }} | {{ role }}</h1>
       <p class="text-sm text-text-sub">{{ location }}</p>
@@ -153,6 +154,7 @@
         <i class="fa-solid fa-arrow-up"></i>
       </button>
     </transition>
+  </div>
   </div>
 <a id="codex-banner" href="https://github.com/chungchung234/cover_letter" target="_blank" class="fixed bottom-4 right-4 bg-gray-800 text-white text-xs px-3 py-2 rounded shadow-lg z-50 flex items-center space-x-2">
     <i class="fa-solid fa-circle-info"></i>
