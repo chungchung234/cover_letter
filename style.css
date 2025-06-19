@@ -1,8 +1,36 @@
+:root {
+  /* Light mode palette */
+  --color-main: #C7B9C7; /* 라일락 그레이 */
+  --color-sub-bg: #DAD2DA; /* 라벤더 그레이 */
+  --color-card-bg: #B5A4B5; /* 플럼 미스트 */
+  --color-border: #9C849C; /* 다스티 퍼플 */
+  --color-link: #B9C7C1; /* 소프트 민트 */
+  --color-text-accent: #4B2E4C; /* 다크 플럼 */
+  --color-btn-hover: #AC7088; /* 로즈우드 */
+  --color-bg: #FAF9FA; /* 소프트 화이트 */
+  --color-text-main: #333333; /* 차콜 그레이 */
+  --color-text-sub: #777777; /* 미디엄 그레이 */
+}
+
+#app.dark {
+  /* Dark mode palette */
+  --color-bg: #1E1B1E; /* 다크 퍼플 블랙 */
+  --color-card-bg: #5C4F5C; /* 미드 플럼 */
+  --color-border: #9C849C; /* 퍼플 그레이 */
+  --color-link: #B9C7C1; /* 라벤더 민트 */
+  --color-text-accent: #755C75; /* 플럼 딥 */
+  --color-btn-hover: #AC7088; /* 플럼 핑크 */
+  --color-text-main: #F2EDF2; /* 라이트 라벤더 */
+  --color-text-sub: #B5A4B5; /* 라이트 퍼플 그레이 */
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
 }
 
 #app {
@@ -10,17 +38,17 @@ body {
 }
 
 #app.dark {
-  background-color: #222;
-  color: #eee;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
 }
 
 #app.dark a {
-  color: #9ad;
+  color: var(--color-link);
 }
 
 .page-nav a.active {
   font-weight: bold;
-  border-bottom: 2px solid #1e40af;
+  border-bottom: 2px solid var(--color-main);
 }
 
 main section {
