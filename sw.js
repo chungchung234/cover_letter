@@ -1,11 +1,11 @@
 const CACHE_NAME = 'cover-letter-cache-v1';
 const ASSETS = [
   '/',
-  '/index.html',
-  '/style.css',
-  '/main.js',
-  '/manifest.json',
-  '/profile.jpg'
+  'index.html',
+  'style.css',
+  'main.js',
+  'manifest.json',
+  'profile.jpg'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(
