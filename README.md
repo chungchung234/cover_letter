@@ -16,12 +16,6 @@ storage so your preference is kept when you reload the page.
 3. Your site will be available at `https://<your-username>.github.io/cover_letter/`.
 
 You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
-
-## Mobile & Hybrid Usage
-The site provides a `manifest.json` and registers a service worker so it can
-be installed on mobile devices like a native app. Load `index.html` in a modern
-browser to add it to your home screen and access the page offline.
-
 ## Responsive Layout
 The layout adapts from mobile to desktop sizes. On small screens the navigation menu collapses behind a hamburger button, while larger screens show the full menu.
 
