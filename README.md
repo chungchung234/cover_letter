@@ -17,7 +17,7 @@ local storage so your preference is kept when you reload the page.
 You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
 
 ## Mobile & Hybrid Usage
-The site now provides a `manifest.json` and registers a service worker so it can
+The site provides a `manifest.json` and registers a service worker so it can
 be installed on mobile devices like a native app. Load `index.html` in a modern
 browser to add it to your home screen and access the page offline.
 
@@ -33,7 +33,7 @@ name, role, location, and other details shown on the site. You can also modify
 `email`, `phone` and `github` there if you wish to publish different contact
 information.
 
-The hero section in `index.html` (around line 38) loads an image named
+The hero section in `index.html` (around line 94) loads an image named
 `profile.jpg`. Replace that file in the project root with your own photograph or
 adjust the `src` attribute if you prefer a different path. If you do not want to
 include a photo, you can remove the `<img>` tag entirely.
@@ -48,4 +48,5 @@ To run the Python unit tests, execute:
 python -m unittest
 ```
 
-This command runs both tests located in the `tests/` folder.
+This command runs all tests located in the `tests/` folder, including a check
+that `profile.jpg` exists and is not empty.
