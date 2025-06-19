@@ -15,6 +15,14 @@ details.
 
 You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
 
+## Mobile & Hybrid Usage
+The site now provides a `manifest.json` and registers a service worker so it can
+be installed on mobile devices like a native app. Load `index.html` in a modern
+browser to add it to your home screen and access the page offline.
+
+## Responsive Layout
+The layout now adapts from mobile to desktop sizes. On small screens the navigation menu collapses behind a hamburger button, while larger screens show the full menu.
+
 ## Personalization
 Edit the values near the top of `main.js` (around lines 5–11) to update your
 name, role, location, and other details shown on the site. You can also modify
