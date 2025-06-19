@@ -43,7 +43,6 @@
   <div id="app" :class="{ dark: isDark }" class="mx-auto p-4 sm:p-6 lg:p-8 max-w-3xl sm:max-w-4xl lg:max-w-6xl bg-background text-text-main rounded-lg shadow">
     <header class="text-center mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold mb-1">{{ name }} | {{ role }}</h1>
-      <p class="text-sm text-text-sub">{{ location }}</p>
       <button @click="toggleDarkMode" class="mode-toggle mt-3 px-3 py-1 bg-brand text-white rounded hover:bg-brand/90 transition-colors duration-300">
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>

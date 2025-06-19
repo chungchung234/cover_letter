@@ -29,8 +29,8 @@ Content sections are wrapped with Tailwind's `prose` classes for better typograp
 
 ## Personalization
 Edit the values near the top of `main.js` (around lines 5–11) to update your
-name, role, location, and other details shown on the site. You can also modify
-`email`, `phone` and `github` there if you wish to publish different contact
+name, role, location, and other details shown on the site. You can also modify `email`,
+`phone` and `github` there if you wish to publish different contact
 information.
 
 The hero section in `index.html` (around line 94) loads an image named
