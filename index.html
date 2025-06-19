@@ -5,88 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이충현 | Web Developer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-olstxZld0df6OwLKhPNgm6kKiC9JIhbSAVnX1nvUs61f7o+Jfm6D/Ejko116IhVQbKXtEOi33ECszP2vCux/JQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous" defer></script>
 </head>
 <body>
-  <div id="app" :class="{ dark: isDark }">
-    <header>
-      <h1>{{ name }} | {{ role }}</h1>
-      <p class="location">{{ location }}</p>
-      <button @click="toggleDarkMode" class="mode-toggle">
+  <div id="app" :class="{ dark: isDark }" class="max-w-3xl mx-auto p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg shadow">
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold mb-1">{{ name }} | {{ role }}</h1>
+      <p class="text-sm text-gray-600 dark:text-gray-400">{{ location }}</p>
+      <button @click="toggleDarkMode" class="mode-toggle mt-3 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>
     </header>
-    <nav class="page-nav">
-      <a href="#intro">소개</a>
-      <a href="#tech">기술 스택</a>
-      <a href="#experience">경력</a>
-      <a href="#education">학력</a>
-      <a href="#certs">자격증 &amp; 교육</a>
-      <a href="#projects">프로젝트</a>
-      <a href="#philosophy">기술 철학</a>
-      <a href="#cover">자기소개서</a>
+    <nav class="page-nav sticky top-0 z-50 bg-white dark:bg-gray-800 flex flex-wrap gap-2 p-2 shadow">
+      <a href="#intro" class="text-sm px-2 py-1 hover:text-blue-600">소개</a>
+      <a href="#tech" class="text-sm px-2 py-1 hover:text-blue-600">기술 스택</a>
+      <a href="#experience" class="text-sm px-2 py-1 hover:text-blue-600">경력</a>
+      <a href="#education" class="text-sm px-2 py-1 hover:text-blue-600">학력</a>
+      <a href="#certs" class="text-sm px-2 py-1 hover:text-blue-600">자격증 &amp; 교육</a>
+      <a href="#projects" class="text-sm px-2 py-1 hover:text-blue-600">프로젝트</a>
+      <a href="#philosophy" class="text-sm px-2 py-1 hover:text-blue-600">기술 철학</a>
+      <a href="#cover" class="text-sm px-2 py-1 hover:text-blue-600">자기소개서</a>
     </nav>
     <main>
-      <section id="hero" class="hero">
-        <img src="profile.jpg" class="profile-image" :alt="`${name} 프로필 사진`">
-        <p class="tagline">열정적인 웹 개발자입니다.</p>
+      <section id="hero" class="hero text-center mb-10">
+        <img src="profile.jpg" class="profile-image w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto" :alt="`${name} 프로필 사진`">
+        <p class="tagline mt-2 text-lg text-gray-700 dark:text-gray-300">열정적인 웹 개발자입니다.</p>
       </section>
-      <section id="intro">
-        <h2>소개</h2>
-        <p>{{ summary }}</p>
+      <section id="intro" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">소개</h2>
+        <p class="leading-relaxed">{{ summary }}</p>
       </section>
-      <section id="tech">
-        <h2>기술 스택</h2>
-        <ul>
-          <li v-for="tech in techStack">
+      <section id="tech" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">기술 스택</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li v-for="tech in techStack" class="ml-4">
             <strong>{{ tech.category }}:</strong> {{ tech.skills }}
           </li>
         </ul>
       </section>
-      <section id="experience">
-        <h2>경력</h2>
-        <div v-for="exp in experiences" class="experience">
-          <h3>{{ exp.company }} | {{ exp.role }}</h3>
-          <p class="dates">{{ exp.dates }}</p>
-          <ul>
+      <section id="experience" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">경력</h2>
+        <div v-for="exp in experiences" class="experience mb-4">
+          <h3 class="font-semibold">{{ exp.company }} | {{ exp.role }}</h3>
+          <p class="dates text-sm text-gray-600 dark:text-gray-400">{{ exp.dates }}</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
             <li v-for="detail in exp.details">{{ detail }}</li>
           </ul>
         </div>
       </section>
-      <section id="education">
-        <h2>학력</h2>
-        <p>{{ education }}</p>
+      <section id="education" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">학력</h2>
+        <p class="leading-relaxed">{{ education }}</p>
       </section>
-      <section id="certs">
-        <h2>자격증 &amp; 교육</h2>
-        <ul>
+      <section id="certs" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">자격증 &amp; 교육</h2>
+        <ul class="list-disc list-inside space-y-1 ml-4">
           <li v-for="cert in certificates">{{ cert }}</li>
         </ul>
       </section>
-      <section id="projects" class="projects">
-        <h2>기타 프로젝트 / 수상</h2>
-        <div class="projects-grid">
-          <div class="project-card" v-for="pr in projects" :key="pr.title">
-            <img v-if="pr.screenshot" :src="pr.screenshot" :alt="pr.title + ' screenshot'">
-            <h3><a :href="pr.link" target="_blank">{{ pr.title }}</a></h3>
-            <p>{{ pr.description }}</p>
+      <section id="projects" class="projects mb-8">
+        <h2 class="text-2xl font-semibold mb-2">기타 프로젝트 / 수상</h2>
+        <div class="projects-grid grid gap-4 grid-cols-1 sm:grid-cols-2">
+          <div class="project-card border rounded-lg p-4 bg-gray-50 dark:bg-gray-800" v-for="pr in projects" :key="pr.title">
+            <img v-if="pr.screenshot" :src="pr.screenshot" :alt="pr.title + ' screenshot'" class="mb-2 rounded">
+            <h3 class="font-semibold"><a :href="pr.link" target="_blank" class="hover:underline text-blue-600">{{ pr.title }}</a></h3>
+            <p class="text-sm">{{ pr.description }}</p>
           </div>
         </div>
       </section>
-      <section id="philosophy">
-        <h2>기술 철학</h2>
-        <p>{{ philosophy }}</p>
+      <section id="philosophy" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">기술 철학</h2>
+        <p class="leading-relaxed">{{ philosophy }}</p>
       </section>
-      <section id="cover">
-        <h2>자기소개서</h2>
-        <p v-for="p in intro">{{ p }}</p>
+      <section id="cover" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">자기소개서</h2>
+        <p v-for="p in intro" class="mb-2">{{ p }}</p>
       </section>
-      <button @click="toggleContact" class="contact-toggle">
+      <button @click="toggleContact" class="contact-toggle px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700">
         {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
       </button>
       <transition name="fade">
-        <section v-if="showContact" id="contact" class="contact">
+        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border rounded bg-gray-50 dark:bg-gray-800">
           <h2>Contact</h2>
           <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
           <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
