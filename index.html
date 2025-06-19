@@ -110,9 +110,13 @@
         <div v-for="group in techStack" :key="group.category" class="mb-4">
           <h3 class="font-semibold mb-1">{{ group.category }}</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            <div v-for="skill in group.skills" :key="skill.name" class="flex items-center gap-1">
-              <i v-if="skill.icon" :class="['text-lg', skill.icon]"></i>
-              <span>{{ skill.name }}</span>
+            <div
+              v-for="skill in group.skills"
+              :key="skill.name"
+              class="flex items-center gap-2 px-2 py-1 rounded bg-sub-bg/60 dark:bg-dark-card-bg/70 border border-border"
+            >
+              <i v-if="skill.icon" :class="['text-brand', 'fa-fw', skill.icon]"></i>
+              <span class="text-sm">{{ skill.name }}</span>
             </div>
           </div>
         </div>
