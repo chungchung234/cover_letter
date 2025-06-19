@@ -149,8 +149,28 @@ createApp({
   }
 }).mount('#app');
 
+const nav = document.querySelector('.page-nav');
 const navLinks = document.querySelectorAll('.page-nav a');
 const sections = document.querySelectorAll('main section[id]');
+
+// highlight the first navigation link on initial load
+if (navLinks.length) {
+  navLinks[0].classList.add('active');
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').slice(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      const y = targetSection.getBoundingClientRect().top + window.pageYOffset - nav.offsetHeight;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
 
 const observer = new IntersectionObserver(
   entries => {
