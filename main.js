@@ -92,6 +92,7 @@ createApp({
     ];
     const isDark = ref(false);
     const showContact = ref(false);
+    const navOpen = ref(false);
 
     const toggleDarkMode = () => {
       isDark.value = !isDark.value;
@@ -99,9 +100,15 @@ createApp({
     const toggleContact = () => {
       showContact.value = !showContact.value;
     };
+    const toggleNav = () => {
+      navOpen.value = !navOpen.value;
+    };
+    const closeNav = () => {
+      navOpen.value = false;
+    };
 
     let schemeHandler = null;
-    onMounted(() => {
+   onMounted(() => {
       const mql = window.matchMedia('(prefers-color-scheme: dark)');
       isDark.value = mql.matches;
       const handler = (e) => {
@@ -113,6 +120,7 @@ createApp({
         mql.addListener(handler);
       }
       schemeHandler = { mql, handler };
+      window.addEventListener('scroll', closeNav);
     });
 
     onBeforeUnmount(() => {
@@ -128,6 +136,7 @@ createApp({
       if (observer) {
         observer.disconnect();
       }
+      window.removeEventListener('scroll', closeNav);
     });
 
     return {
@@ -147,8 +156,11 @@ createApp({
       intro,
       isDark,
       showContact,
+      navOpen,
       toggleDarkMode,
-      toggleContact
+      toggleContact,
+      toggleNav,
+      closeNav
     };
   }
 }).mount('#app');
