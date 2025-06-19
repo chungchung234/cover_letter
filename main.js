@@ -103,9 +103,12 @@ createApp({
     const toggleNav = () => {
       navOpen.value = !navOpen.value;
     };
+    const closeNav = () => {
+      navOpen.value = false;
+    };
 
     let schemeHandler = null;
-    onMounted(() => {
+   onMounted(() => {
       const mql = window.matchMedia('(prefers-color-scheme: dark)');
       isDark.value = mql.matches;
       const handler = (e) => {
@@ -117,6 +120,7 @@ createApp({
         mql.addListener(handler);
       }
       schemeHandler = { mql, handler };
+      window.addEventListener('scroll', closeNav);
     });
 
     onBeforeUnmount(() => {
@@ -132,6 +136,7 @@ createApp({
       if (observer) {
         observer.disconnect();
       }
+      window.removeEventListener('scroll', closeNav);
     });
 
     return {
@@ -154,7 +159,8 @@ createApp({
       navOpen,
       toggleDarkMode,
       toggleContact,
-      toggleNav
+      toggleNav,
+      closeNav
     };
   }
 }).mount('#app');
