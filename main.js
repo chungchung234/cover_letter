@@ -93,6 +93,7 @@ const app = createApp({
     const isDark = ref(false);
     const showContact = ref(false);
     const navOpen = ref(false);
+    const scrollTopVisible = ref(false);
 
     const toggleDarkMode = () => {
       isDark.value = !isDark.value;
@@ -105,6 +106,14 @@ const app = createApp({
     };
     const closeNav = () => {
       navOpen.value = false;
+    };
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const handleScroll = () => {
+      closeNav();
+      scrollTopVisible.value = window.pageYOffset > 300;
     };
 
     let schemeHandler = null;
@@ -120,7 +129,7 @@ const app = createApp({
         mql.addListener(handler);
       }
       schemeHandler = { mql, handler };
-      window.addEventListener('scroll', closeNav);
+      window.addEventListener('scroll', handleScroll);
     });
 
     onBeforeUnmount(() => {
@@ -136,7 +145,7 @@ const app = createApp({
       if (observer) {
         observer.disconnect();
       }
-      window.removeEventListener('scroll', closeNav);
+      window.removeEventListener('scroll', handleScroll);
     });
 
     return {
@@ -157,10 +166,12 @@ const app = createApp({
       isDark,
       showContact,
       navOpen,
+      scrollTopVisible,
       toggleDarkMode,
       toggleContact,
       toggleNav,
-      closeNav
+      closeNav,
+      scrollToTop
     };
   }
 });

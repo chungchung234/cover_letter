@@ -23,6 +23,9 @@ browser to add it to your home screen and access the page offline.
 ## Responsive Layout
 The layout now adapts from mobile to desktop sizes. On small screens the navigation menu collapses behind a hamburger button, while larger screens show the full menu.
 
+## Enhanced Readability
+Content sections are wrapped with Tailwind's `prose` classes for better typography. A floating **scroll to top** button fades in after scrolling down, letting you quickly return to the beginning of the page.
+
 ## Personalization
 Edit the values near the top of `main.js` (around lines 5–11) to update your
 name, role, location, and other details shown on the site. You can also modify
