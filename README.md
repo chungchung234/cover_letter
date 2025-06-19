@@ -14,3 +14,17 @@ details.
 3. Your site will be available at `https://chungchung234.github.io/cover_letter/`.
 
 You can customize the contents in `main.js` and the style in `style.css`.
+
+## Personalization
+Edit the values near the top of `main.js` (around lines 6–11) to update your
+name, role, location, and other details shown on the site. You can also modify
+`email`, `phone` and `github` there if you wish to publish different contact
+information.
+
+The hero section in `index.html` (around line 32) loads an image named
+`profile.jpg`. Replace that file in the project root with your own photograph or
+adjust the `src` attribute if you prefer a different path. If you do not want to
+include a photo, you can remove the `<img>` tag entirely.
+
+Before sharing the page publicly, you may remove or anonymize sensitive data
+from `main.js` such as your phone number or email address.
