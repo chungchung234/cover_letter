@@ -104,11 +104,11 @@
         <img src="profile.jpg" class="profile-image w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto" :alt="`${name} 프로필 사진`">
         <p class="tagline mt-2 text-lg md:text-xl text-text-sub">열정적인 웹 개발자입니다.</p>
       </section>
-      <section id="intro" class="mb-8">
+      <section id="intro" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">소개</h2>
         <p class="leading-relaxed">{{ summary }}</p>
       </section>
-      <section id="tech" class="mb-8">
+      <section id="tech" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">기술 스택</h2>
         <ul class="list-disc list-inside space-y-1">
           <li v-for="tech in techStack" class="ml-4">
@@ -116,33 +116,33 @@
           </li>
         </ul>
       </section>
-      <section id="experience" class="mb-8">
+      <section id="experience" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">경력</h2>
         <div class="grid gap-4 md:grid-cols-2">
           <experience-item v-for="exp in experiences" :key="exp.company" :exp="exp"></experience-item>
         </div>
       </section>
-      <section id="education" class="mb-8">
+      <section id="education" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">학력</h2>
         <p class="leading-relaxed">{{ education }}</p>
       </section>
-      <section id="certs" class="mb-8">
+      <section id="certs" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">자격증 &amp; 교육</h2>
         <ul class="list-disc list-inside space-y-1 ml-4">
           <li v-for="cert in certificates">{{ cert }}</li>
         </ul>
       </section>
-      <section id="projects" class="projects mb-8">
+      <section id="projects" class="projects resume-section">
         <h2 class="text-2xl font-semibold mb-2">기타 프로젝트 / 수상</h2>
         <div class="projects-grid grid gap-4 grid-cols-1 sm:grid-cols-2">
           <project-card v-for="pr in projects" :key="pr.title" :project="pr"></project-card>
         </div>
       </section>
-      <section id="philosophy" class="mb-8">
+      <section id="philosophy" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">기술 철학</h2>
         <p class="leading-relaxed">{{ philosophy }}</p>
       </section>
-      <section id="cover" class="mb-8">
+      <section id="cover" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">자기소개서</h2>
         <p v-for="p in intro" class="mb-2">{{ p }}</p>
       </section>
