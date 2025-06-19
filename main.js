@@ -152,6 +152,11 @@ createApp({
 const navLinks = document.querySelectorAll('.page-nav a');
 const sections = document.querySelectorAll('main section[id]');
 
+// highlight the first navigation link on initial load
+if (navLinks.length) {
+  navLinks[0].classList.add('active');
+}
+
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
