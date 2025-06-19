@@ -10,13 +10,70 @@ const app = createApp({
     const github = 'https://github.com/chungchung234';
     const summary = '3년 차 백엔드 개발자로, 대규모 커머스 플랫폼의 MSA 운영 경험과 실시간 재고 시스템 개발, 대규모 트래픽 처리 경험을 보유하고 있습니다. Java, Spring Boot, AWS 환경에서 고가용성 시스템 설계 및 운영 역량을 갖추고 있으며, 글로벌 파트너사(Ocado)와의 협업을 통해 문제를 선제적으로 진단하고 해결한 경험이 있습니다.';
     const techStack = [
-      { category: 'Backend', skills: 'Java 17(주력), Spring Boot 3, Spring Batch, JPA, MyBatis' },
-      { category: 'Cloud/Infra', skills: 'AWS (EC2, RDS, S3), Docker, Kubernetes (EKS), ArgoCD, Jenkins' },
-      { category: 'Database', skills: 'MySQL, Oracle, MongoDB' },
-      { category: 'Architecture', skills: 'MSA, DDD 설계, RESTful API, OAuth2' },
-      { category: 'Messaging/Cache', skills: 'Redis, Kafka (설계 제안 경험)' },
-      { category: 'Tools', skills: 'Git, GitLab CI, Jira, Confluence, Datadog, ELK Stack' },
-      { category: 'Frontend/ETC', skills: 'Nexacro, WebSquare, Vue.js, JavaScript' }
+      {
+        category: 'Backend',
+        skills: [
+          { name: 'Java 17', icon: 'fa-brands fa-java' },
+          { name: 'Spring Boot 3', icon: 'fa-solid fa-leaf' },
+          { name: 'Spring Batch', icon: 'fa-solid fa-clock-rotate-left' },
+          { name: 'JPA', icon: 'fa-solid fa-database' },
+          { name: 'MyBatis', icon: 'fa-solid fa-database' }
+        ]
+      },
+      {
+        category: 'Cloud/Infra',
+        skills: [
+          { name: 'AWS', icon: 'fa-brands fa-aws' },
+          { name: 'Docker', icon: 'fa-brands fa-docker' },
+          { name: 'Kubernetes', icon: 'fa-solid fa-cubes' },
+          { name: 'ArgoCD', icon: 'fa-solid fa-code-branch' },
+          { name: 'Jenkins', icon: 'fa-solid fa-gear' }
+        ]
+      },
+      {
+        category: 'Database',
+        skills: [
+          { name: 'MySQL', icon: 'fa-solid fa-database' },
+          { name: 'Oracle', icon: 'fa-solid fa-database' },
+          { name: 'MongoDB', icon: 'fa-solid fa-database' }
+        ]
+      },
+      {
+        category: 'Architecture',
+        skills: [
+          { name: 'MSA', icon: 'fa-solid fa-diagram-project' },
+          { name: 'DDD 설계', icon: 'fa-solid fa-layer-group' },
+          { name: 'RESTful API', icon: 'fa-solid fa-link' },
+          { name: 'OAuth2', icon: 'fa-solid fa-key' }
+        ]
+      },
+      {
+        category: 'Messaging/Cache',
+        skills: [
+          { name: 'Redis', icon: 'fa-solid fa-bolt' },
+          { name: 'Kafka', icon: 'fa-solid fa-stream' }
+        ]
+      },
+      {
+        category: 'Tools',
+        skills: [
+          { name: 'Git', icon: 'fa-brands fa-git-alt' },
+          { name: 'GitLab CI', icon: 'fa-brands fa-gitlab' },
+          { name: 'Jira', icon: 'fa-brands fa-jira' },
+          { name: 'Confluence', icon: 'fa-brands fa-confluence' },
+          { name: 'Datadog', icon: 'fa-solid fa-dog' },
+          { name: 'ELK Stack', icon: 'fa-solid fa-chart-area' }
+        ]
+      },
+      {
+        category: 'Frontend/ETC',
+        skills: [
+          { name: 'Nexacro', icon: 'fa-solid fa-desktop' },
+          { name: 'WebSquare', icon: 'fa-solid fa-desktop' },
+          { name: 'Vue.js', icon: 'fa-brands fa-vuejs' },
+          { name: 'JavaScript', icon: 'fa-brands fa-js' }
+        ]
+      }
     ];
     const experiences = [
         {
