@@ -83,7 +83,7 @@
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-      <div :class="['flex-col gap-2', navOpen ? 'flex' : 'hidden', 'sm:flex sm:flex-nowrap sm:gap-4 overflow-x-auto']">
+      <div :class="['flex-col sm:flex-row gap-2 sm:gap-4', navOpen ? 'flex' : 'hidden', 'sm:flex sm:flex-nowrap overflow-x-auto']">
         <a href="#intro" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">소개</a>
         <a href="#tech" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">기술 스택</a>
         <a href="#experience" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">경력</a>
