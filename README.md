@@ -1,47 +1,46 @@
-# Cover Letter Site
+# 커버레터 사이트
 
-This is a minimal Vue-based site for a personal cover letter. The page uses Tailwind CSS for styling via CDN and can be deployed to GitHub Pages.
+## 소개
+개인용 커버레터를 빠르게 공개하기 위한 Vue 3 + Tailwind CSS 템플릿입니다. 정적 파일만으로 구성되어 별도의 빌드 과정 없이 GitHub Pages에 바로 올릴 수 있습니다.
 
-## Local Preview
-Open `index.html` in a browser to see the page. The site automatically matches
-your operating system's light or dark mode. A **dark mode** toggle with a
-sun/moon icon is fixed to the top right corner for quick access. Use it to
-switch themes manually and the **contact toggle** to reveal a styled contact
-card with your email, phone, and address. The selected mode is saved to local
-storage so your preference is kept when you reload the page.
+## 기능 요약
+- 운영체제 테마를 인식하는 라이트/다크 모드 및 수동 토글
+- 연락처 카드 표시/숨김 버튼
+- 작은 화면에서 자동으로 접히는 내비게이션 메뉴
+- 스크롤 시 나타나는 **맨 위로 이동** 버튼
+- Tailwind의 `prose` 클래스로 읽기 쉬운 본문 스타일링
 
-## Deploy to GitHub Pages
-1. Push the contents of this repository to GitHub.
-2. In the repository settings, enable **GitHub Pages** and select the `main` branch (or the branch you use) as the source.
-3. Your site will be available at `https://<your-username>.github.io/cover_letter/`.
+## 스크린샷
+프로필 예시는 저장소의 `profile.jpg` 파일을 사용합니다.
 
-You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
-## Responsive Layout
-The layout adapts from mobile to desktop sizes. On small screens the navigation menu collapses behind a hamburger button, while larger screens show the full menu.
+![screenshot](profile.jpg)
 
-## Enhanced Readability
-Content sections are wrapped with Tailwind's `prose` classes for better typography. A floating **scroll to top** button fades in after scrolling down, letting you quickly return to the beginning of the page.
-
-## Personalization
-Edit the values near the top of `main.js` (around lines 5–11) to update your
-name, role, location, and other details shown on the site. You can also modify `email`,
-`phone` and `github` there if you wish to publish different contact
-information.
-
-The hero section in `index.html` (around line 103) loads an image named
-`profile.jpg`. Replace that file in the project root with your own photograph or
-adjust the `src` attribute if you prefer a different path. If you do not want to
-include a photo, you can remove the `<img>` tag entirely.
-
-Before sharing the page publicly, you may remove or anonymize sensitive data
-from `main.js` such as your phone number or email address.
-
-## Running Tests
-To run the Python unit tests, execute:
-
+## 설치 방법
 ```bash
-python -m unittest
+git clone https://github.com/<사용자명>/cover_letter.git
+cd cover_letter
+```
+별도 의존성 없이 `index.html`을 바로 열거나 다음과 같이 간단한 HTTP 서버를 실행할 수 있습니다.
+```bash
+python -m http.server
 ```
 
-This command runs all tests located in the `tests/` folder, including a check
-that `profile.jpg` exists and is not empty.
+## 사용 방법
+- `main.js`에서 이름, 직무, 연락처 등 개인 정보를 수정합니다.
+- 필요하면 `index.html`과 `style.css`를 편집하여 레이아웃이나 색상을 변경합니다.
+- 변경 사항을 커밋해 GitHub에 푸시하면 GitHub Pages에서 사이트가 제공됩니다.
+
+## 기술 스택
+- ![Vue](https://img.shields.io/badge/Vue-3-brightgreen)
+- ![Tailwind](https://img.shields.io/badge/TailwindCSS-CDN-blue)
+- GitHub Pages
+
+## 디렉터리 구조
+- `index.html` – 기본 마크업과 Tailwind 설정이 포함된 메인 페이지
+- `main.js` – Vue 애플리케이션 로직 및 개인 정보, 기술 스택 정의
+- `style.css` – 다크 모드 팔레트와 추가 스타일
+- `profile.jpg` – 기본 프로필 사진 파일
+- `tests/` – 주요 파일의 존재 여부를 검증하는 Python 테스트 스크립트 모음
+
+## 라이선스
+이 프로젝트는 [Apache-2.0](LICENSE) 라이선스로 배포됩니다.
