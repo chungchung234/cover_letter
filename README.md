@@ -11,7 +11,7 @@ details.
 ## Deploy to GitHub Pages
 1. Push the contents of this repository to GitHub.
 2. In the repository settings, enable **GitHub Pages** and select the `main` branch (or the branch you use) as the source.
-3. Your site will be available at `https://chungchung234.github.io/cover_letter/`.
+3. Your site will be available at `https://<your-username>.github.io/cover_letter/`.
 
 You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
 
