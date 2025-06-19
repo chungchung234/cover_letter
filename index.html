@@ -106,11 +106,15 @@
       </section>
       <section id="tech" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">기술 스택</h2>
-        <ul class="list-disc list-inside space-y-1">
-          <li v-for="tech in techStack" class="ml-4">
-            <strong>{{ tech.category }}:</strong> {{ tech.skills }}
-          </li>
-        </ul>
+        <div v-for="group in techStack" :key="group.category" class="mb-4">
+          <h3 class="font-semibold mb-1">{{ group.category }}</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <div v-for="skill in group.skills" :key="skill.name" class="flex items-center gap-1">
+              <i v-if="skill.icon" :class="['text-lg', skill.icon]"></i>
+              <span>{{ skill.name }}</span>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="experience" class="resume-section">
         <h2 class="text-2xl font-semibold mb-2">경력</h2>
