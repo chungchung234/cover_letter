@@ -263,7 +263,7 @@ app.component('project-card', {
   `
 });
 
-app.mount('#app-root');
+const vm = app.mount('#app-root');
 
 const nav = document.querySelector('.page-nav');
 const navLinks = document.querySelectorAll('.page-nav a');
@@ -285,7 +285,7 @@ navLinks.forEach(link => {
     }
     navLinks.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
-    closeNav();
+    vm.closeNav();
   });
 });
 
