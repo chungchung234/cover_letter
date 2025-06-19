@@ -1,6 +1,6 @@
 const { createApp, ref, onMounted, onBeforeUnmount } = Vue;
 
-createApp({
+const app = createApp({
   setup() {
     const name = '이충현';
     const role = 'Web(Fe/Be) Developer';
@@ -163,7 +163,33 @@ createApp({
       closeNav
     };
   }
-}).mount('#app');
+});
+
+app.component('experience-item', {
+  props: ['exp'],
+  template: `
+    <div class="experience p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 transition duration-300 hover:shadow-lg">
+      <h3 class="font-semibold">{{ exp.company }} | {{ exp.role }}</h3>
+      <p class="dates text-sm text-gray-600 dark:text-gray-400">{{ exp.dates }}</p>
+      <ul class="list-disc list-inside ml-4 space-y-1">
+        <li v-for="detail in exp.details">{{ detail }}</li>
+      </ul>
+    </div>
+  `
+});
+
+app.component('project-card', {
+  props: ['project'],
+  template: `
+    <div class="project-card border rounded-lg p-4 bg-gray-50 dark:bg-gray-800 transition duration-300 hover:shadow-lg">
+      <img v-if="project.screenshot" :src="project.screenshot" :alt="project.title + ' screenshot'" class="mb-2 rounded">
+      <h3 class="font-semibold"><a :href="project.link" target="_blank" rel="noopener noreferrer" class="hover:underline text-brand">{{ project.title }}</a></h3>
+      <p class="text-sm">{{ project.description }}</p>
+    </div>
+  `
+});
+
+app.mount('#app');
 
 const nav = document.querySelector('.page-nav');
 const navLinks = document.querySelectorAll('.page-nav a');
