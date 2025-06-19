@@ -75,7 +75,7 @@
         <a href="#cover" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">자기소개서</a>
       </div>
     </nav>
-    <main>
+    <main class="prose sm:prose-lg dark:prose-invert max-w-none">
       <section id="hero" class="hero text-center mb-10">
         <img src="profile.jpg" class="profile-image w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto" :alt="`${name} 프로필 사진`">
         <p class="tagline mt-2 text-lg md:text-xl text-gray-700 dark:text-gray-300">열정적인 웹 개발자입니다.</p>
@@ -134,6 +134,16 @@
         </section>
   </transition>
     </main>
+    <transition name="fade">
+      <button
+        v-if="scrollTopVisible"
+        @click="scrollToTop"
+        class="fixed bottom-20 right-4 bg-brand text-white p-3 rounded-full shadow-lg hover:bg-brand/90"
+        aria-label="맨 위로 이동"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </transition>
   </div>
 <a id="codex-banner" href="https://github.com/chungchung234/cover_letter" target="_blank" class="fixed bottom-4 right-4 bg-gray-800 text-white text-xs px-3 py-2 rounded shadow-lg z-50 flex items-center space-x-2">
     <i class="fa-solid fa-circle-info"></i>
