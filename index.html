@@ -66,13 +66,17 @@
             <i class="fa-solid fa-location-dot"></i>
             <span>{{ location }}</span>
           </p>
-          <p class="mt-1 flex items-center gap-2">
-            <i class="fa-brands fa-github"></i>
-            <a :href="github" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
-          </p>
-        </section>
-      </transition>
-    </header>
+            <p class="mt-1 flex items-center gap-2">
+              <i class="fa-brands fa-github"></i>
+              <a :href="github" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+            </p>
+            <p class="mt-1 flex items-center gap-2">
+              <i class="fa-solid fa-globe"></i>
+              <a href="https://github.com/chungchung234/" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub 페이지</a>
+            </p>
+          </section>
+        </transition>
+      </header>
     <nav class="page-nav sticky top-0 z-50 bg-sub-bg p-2 shadow">
       <div class="sm:hidden flex justify-end">
         <button @click="toggleNav" class="text-text-sub text-xl px-2 py-1">
@@ -137,17 +141,7 @@
         <h2 class="text-2xl font-semibold mb-2">자기소개서</h2>
         <p v-for="p in intro" class="mb-2">{{ p }}</p>
       </section>
-      <button @click="toggleContact" class="contact-toggle px-3 py-1 bg-link text-white rounded hover:bg-hover-btn transition-colors duration-300">
-        {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
-      </button>
-      <transition name="fade">
-        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border border-border rounded bg-card-bg">
-          <h2>Contact</h2>
-          <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
-          <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
-          <p><i class="fa-brands fa-github"></i> <a :href="github" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-        </section>
-  </transition>
+
     </main>
     <transition name="fade">
       <button
