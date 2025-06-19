@@ -124,6 +124,9 @@ createApp({
           mql.removeListener(handler);
         }
       }
+      if (observer) {
+        observer.disconnect();
+      }
     });
 
     return {
