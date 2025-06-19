@@ -92,12 +92,16 @@ createApp({
     ];
     const isDark = ref(false);
     const showContact = ref(false);
+    const navOpen = ref(false);
 
     const toggleDarkMode = () => {
       isDark.value = !isDark.value;
     };
     const toggleContact = () => {
       showContact.value = !showContact.value;
+    };
+    const toggleNav = () => {
+      navOpen.value = !navOpen.value;
     };
 
     let schemeHandler = null;
@@ -147,8 +151,10 @@ createApp({
       intro,
       isDark,
       showContact,
+      navOpen,
       toggleDarkMode,
-      toggleContact
+      toggleContact,
+      toggleNav
     };
   }
 }).mount('#app');
