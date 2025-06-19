@@ -97,6 +97,7 @@ const app = createApp({
 
     const toggleDarkMode = () => {
       isDark.value = !isDark.value;
+      localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
     };
     const toggleContact = () => {
       showContact.value = !showContact.value;
@@ -118,17 +119,22 @@ const app = createApp({
 
     let schemeHandler = null;
    onMounted(() => {
-      const mql = window.matchMedia('(prefers-color-scheme: dark)');
-      isDark.value = mql.matches;
-      const handler = (e) => {
-        isDark.value = e.matches;
-      };
-      if (mql.addEventListener) {
-        mql.addEventListener('change', handler);
-      } else if (mql.addListener) {
-        mql.addListener(handler);
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        isDark.value = stored === 'dark';
+      } else {
+        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+        isDark.value = mql.matches;
+        const handler = (e) => {
+          isDark.value = e.matches;
+        };
+        if (mql.addEventListener) {
+          mql.addEventListener('change', handler);
+        } else if (mql.addListener) {
+          mql.addListener(handler);
+        }
+        schemeHandler = { mql, handler };
       }
-      schemeHandler = { mql, handler };
       window.addEventListener('scroll', handleScroll);
     });
 
