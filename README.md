@@ -1,6 +1,6 @@
 # Cover Letter Site
 
-This is a minimal Vue-based site for a personal cover letter. The page now uses Tailwind CSS for styling alongside Vue (Composition API) via CDN and can be deployed to GitHub Pages.
+This is a minimal Vue-based site for a personal cover letter. The page uses Tailwind CSS for styling via CDN and can be deployed to GitHub Pages.
 
 ## Local Preview
 Open `index.html` in a browser to see the page. The site automatically matches
