@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이충현 | Web Developer</title>
-  <meta name="theme-color" content="#1e40af">
+  <meta name="theme-color" content="#C7B9C7">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <!-- Tailwind CSS with plugins -->
@@ -15,7 +15,22 @@
       theme: {
         extend: {
           colors: {
-            brand: '#1e40af'
+            brand: '#C7B9C7',
+            'sub-bg': '#DAD2DA',
+            'card-bg': '#B5A4B5',
+            border: '#9C849C',
+            link: '#B9C7C1',
+            accent: '#4B2E4C',
+            'hover-btn': '#AC7088',
+            background: '#FAF9FA',
+            'text-main': '#333333',
+            'text-sub': '#777777',
+            /* Dark mode values */
+            'dark-bg': '#1E1B1E',
+            'dark-card-bg': '#5C4F5C',
+            'accent-box': '#755C75',
+            'dark-text-main': '#F2EDF2',
+            'dark-text-sub': '#B5A4B5'
           }
         }
       }
@@ -25,19 +40,19 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-  <div id="app" :class="{ dark: isDark }" class="mx-auto p-4 sm:p-6 lg:p-8 max-w-3xl sm:max-w-4xl lg:max-w-6xl bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg shadow">
+  <div id="app" :class="{ dark: isDark }" class="mx-auto p-4 sm:p-6 lg:p-8 max-w-3xl sm:max-w-4xl lg:max-w-6xl bg-background text-text-main rounded-lg shadow">
     <header class="text-center mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold mb-1">{{ name }} | {{ role }}</h1>
-      <p class="text-sm text-gray-600 dark:text-gray-400">{{ location }}</p>
+      <p class="text-sm text-text-sub">{{ location }}</p>
       <button @click="toggleDarkMode" class="mode-toggle mt-3 px-3 py-1 bg-brand text-white rounded hover:bg-brand/90 transition-colors duration-300">
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>
-      <button @click="toggleContact" class="contact-toggle mt-2 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 flex items-center gap-1 transition-colors duration-300">
+      <button @click="toggleContact" class="contact-toggle mt-2 px-3 py-1 bg-link text-white rounded hover:bg-hover-btn flex items-center gap-1 transition-colors duration-300">
         <i class="fa-solid fa-address-book"></i>
         {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
       </button>
       <transition name="fade">
-        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border rounded-lg shadow-md bg-gray-50 dark:bg-gray-800">
+        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border border-border rounded-lg shadow-md bg-card-bg">
           <h2 class="font-semibold text-lg mb-2">Contact</h2>
           <p class="mt-1 flex items-center gap-2">
             <i class="fa-solid fa-envelope"></i>
@@ -58,27 +73,27 @@
         </section>
       </transition>
     </header>
-    <nav class="page-nav sticky top-0 z-50 bg-white dark:bg-gray-800 p-2 shadow">
+    <nav class="page-nav sticky top-0 z-50 bg-sub-bg p-2 shadow">
       <div class="sm:hidden flex justify-end">
-        <button @click="toggleNav" class="text-gray-700 dark:text-gray-200 text-xl px-2 py-1">
+        <button @click="toggleNav" class="text-text-sub text-xl px-2 py-1">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
       <div :class="['flex-col gap-2', navOpen ? 'flex' : 'hidden', 'sm:flex sm:flex-nowrap sm:gap-4 overflow-x-auto']">
-        <a href="#intro" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">소개</a>
-        <a href="#tech" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">기술 스택</a>
-        <a href="#experience" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">경력</a>
-        <a href="#education" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">학력</a>
-        <a href="#certs" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">자격증 &amp; 교육</a>
-        <a href="#projects" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">프로젝트</a>
-        <a href="#philosophy" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">기술 철학</a>
-        <a href="#cover" @click="closeNav" class="text-sm px-2 py-1 transition-colors hover:text-brand">자기소개서</a>
+        <a href="#intro" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">소개</a>
+        <a href="#tech" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">기술 스택</a>
+        <a href="#experience" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">경력</a>
+        <a href="#education" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">학력</a>
+        <a href="#certs" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">자격증 &amp; 교육</a>
+        <a href="#projects" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">프로젝트</a>
+        <a href="#philosophy" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">기술 철학</a>
+        <a href="#cover" @click="closeNav" class="text-sm px-2 py-1 text-text-main transition-colors hover:text-brand">자기소개서</a>
       </div>
     </nav>
     <main class="prose sm:prose-lg dark:prose-invert max-w-none">
       <section id="hero" class="hero text-center mb-10">
         <img src="profile.jpg" class="profile-image w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto" :alt="`${name} 프로필 사진`">
-        <p class="tagline mt-2 text-lg md:text-xl text-gray-700 dark:text-gray-300">열정적인 웹 개발자입니다.</p>
+        <p class="tagline mt-2 text-lg md:text-xl text-text-sub">열정적인 웹 개발자입니다.</p>
       </section>
       <section id="intro" class="mb-8">
         <h2 class="text-2xl font-semibold mb-2">소개</h2>
@@ -122,11 +137,11 @@
         <h2 class="text-2xl font-semibold mb-2">자기소개서</h2>
         <p v-for="p in intro" class="mb-2">{{ p }}</p>
       </section>
-      <button @click="toggleContact" class="contact-toggle px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition-colors duration-300">
+      <button @click="toggleContact" class="contact-toggle px-3 py-1 bg-link text-white rounded hover:bg-hover-btn transition-colors duration-300">
         {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
       </button>
       <transition name="fade">
-        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border rounded bg-gray-50 dark:bg-gray-800">
+        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border border-border rounded bg-card-bg">
           <h2>Contact</h2>
           <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
           <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
