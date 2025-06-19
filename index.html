@@ -25,6 +25,31 @@
       <button @click="toggleDarkMode" class="mode-toggle mt-3 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
         {{ isDark ? '라이트 모드' : '다크 모드' }}
       </button>
+      <button @click="toggleContact" class="contact-toggle mt-2 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 flex items-center gap-1">
+        <i class="fa-solid fa-address-book"></i>
+        {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
+      </button>
+      <transition name="fade">
+        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border rounded-lg shadow-md bg-gray-50 dark:bg-gray-800">
+          <h2 class="font-semibold text-lg mb-2">Contact</h2>
+          <p class="mt-1 flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            <a :href="`mailto:${email}`" class="hover:underline">{{ email }}</a>
+          </p>
+          <p class="mt-1 flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i>
+            <a :href="`tel:${phone}`" class="hover:underline">{{ phone }}</a>
+          </p>
+          <p class="mt-1 flex items-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>{{ location }}</span>
+          </p>
+          <p class="mt-1 flex items-center gap-2">
+            <i class="fa-brands fa-github"></i>
+            <a :href="github" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+          </p>
+        </section>
+      </transition>
     </header>
     <nav class="page-nav sticky top-0 z-50 bg-white dark:bg-gray-800 p-2 shadow">
       <div class="sm:hidden flex justify-end">
@@ -98,17 +123,7 @@
         <h2 class="text-2xl font-semibold mb-2">자기소개서</h2>
         <p v-for="p in intro" class="mb-2">{{ p }}</p>
       </section>
-      <button @click="toggleContact" class="contact-toggle px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700">
-        {{ showContact ? '연락처 숨기기' : '연락처 보기' }}
-      </button>
-      <transition name="fade">
-        <section v-if="showContact" id="contact" class="contact mt-4 p-4 border rounded bg-gray-50 dark:bg-gray-800">
-          <h2>Contact</h2>
-          <p><i class="fa-solid fa-envelope"></i> <a :href="`mailto:${email}`">{{ email }}</a></p>
-          <p><i class="fa-solid fa-phone"></i> <a :href="`tel:${phone}`">{{ phone }}</a></p>
-          <p><i class="fa-brands fa-github"></i> <a :href="github" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-        </section>
-      </transition>
+      
     </main>
   </div>
   <script src="main.js" defer></script>

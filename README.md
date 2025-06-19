@@ -5,8 +5,8 @@ This is a minimal Vue-based site for a personal cover letter. The page uses Tail
 ## Local Preview
 Open `index.html` in a browser to see the page. The site automatically matches
 your operating system's light or dark mode. You can also use the **dark mode**
-button to switch themes manually and the **contact toggle** to reveal contact
-details.
+button to switch themes manually and the **contact toggle** to reveal a styled
+contact card with your email, phone, and address.
 
 ## Deploy to GitHub Pages
 1. Push the contents of this repository to GitHub.
