@@ -24,7 +24,7 @@ createApp({
           role: 'Web(Fe/Be) Developer',
           dates: '2022.12 – 2025.01 | 정규직',
           details: [
-            '롯데마트 제타 프로젝트: 상품 및 재고 시스템 핵심 설계·개발, 메세징 시스템 도입 분석 및 적용',
+            '롯데마트 제타 프로젝트: 상품 및 재고 시스템 핵심 설계·개발, 메시징 시스템 도입 분석 및 적용',
             '1일 단위 재고 배치 → 1분 단위 실시간 배치로 리팩토링',
             '약 8.8만 건 상품 API 연동 자동화 및 테스트 서버 구축',
             'Google OCR 도입 제안으로 비용 절감',
@@ -124,6 +124,10 @@ createApp({
           mql.removeListener(handler);
         }
       }
+
+      if (observer) {
+        observer.disconnect();
+      }
     });
 
     return {
@@ -151,6 +155,11 @@ createApp({
 
 const navLinks = document.querySelectorAll('.page-nav a');
 const sections = document.querySelectorAll('main section[id]');
+
+// highlight the first navigation link on initial load
+if (navLinks.length) {
+  navLinks[0].classList.add('active');
+}
 
 const observer = new IntersectionObserver(
   entries => {
