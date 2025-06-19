@@ -64,6 +64,38 @@ const github = "https://github.com/chungchung234";
 
 ---
 
+## 커밋 메시지 및 PR 작명 규칙
+
+### 커밋 메시지 규칙 (Conventional Commits 기반)
+- `feat`: 새로운 기능 추가
+- `fix`: 버그 수정
+- `docs`: 문서 수정 (예: README, agent.md 등)
+- `style`: 코드 포맷팅, 세미콜론 누락 등 비기능적 변경
+- `refactor`: 코드 리팩토링
+- `test`: 테스트 코드 추가 또는 수정
+- `chore`: 빌드 업무, 패키지 매니저 설정 등 기타 변경
+예시:
+'''
+feat: 프로필 카드 레이아웃 추가 (Vue + Tailwind)
+fix: GitHub 링크에서 target 속성 누락 수정
+docs: agent.md에 커밋 작명 규칙 추가
+'''
+
+---
+
+### Pull Request 제목 규칙
+- `[feat]`, `[fix]`, `[docs]`, `[refactor]`, `[test]`, `[chore]` 접두사 사용
+- 간결하고 명확한 작업 설명 포함
+
+예시:
+'''
+[feat] 다크모드 카드 UI 추가
+[docs] agent.md 작성 및 문서화
+[fix] 프로필 이름 렌더링 오류 수정
+'''
+
+---
+
 ## 가능한 추가 기능
 - SNS 링크 추가 (LinkedIn, Blog 등)
 - 프로젝트 섹션 추가 (props 기반)
