@@ -1,6 +1,6 @@
 # Cover Letter Site
 
-This is a minimal Vue-based site for a personal cover letter. The page now uses Tailwind CSS for styling alongside Vue (Composition API) via CDN and can be deployed to GitHub Pages.
+This is a minimal Vue-based site for a personal cover letter. The page uses Tailwind CSS for styling via CDN and can be deployed to GitHub Pages.
 
 ## Local Preview
 Open `index.html` in a browser to see the page. The site automatically matches
@@ -11,7 +11,7 @@ details.
 ## Deploy to GitHub Pages
 1. Push the contents of this repository to GitHub.
 2. In the repository settings, enable **GitHub Pages** and select the `main` branch (or the branch you use) as the source.
-3. Your site will be available at `https://chungchung234.github.io/cover_letter/`.
+3. Your site will be available at `https://<your-username>.github.io/cover_letter/`.
 
 You can customize the contents in `main.js` and extend the Tailwind classes in `index.html` or add custom styles in `style.css`.
 
@@ -44,4 +44,4 @@ To run the Python unit tests, execute:
 python -m unittest
 ```
 
-This will run all tests found in the `tests/` folder.
+This command runs both tests located in the `tests/` folder.

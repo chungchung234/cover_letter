@@ -85,7 +85,7 @@
         <div class="projects-grid grid gap-4 grid-cols-1 sm:grid-cols-2">
           <div class="project-card border rounded-lg p-4 bg-gray-50 dark:bg-gray-800" v-for="pr in projects" :key="pr.title">
             <img v-if="pr.screenshot" :src="pr.screenshot" :alt="pr.title + ' screenshot'" class="mb-2 rounded">
-            <h3 class="font-semibold"><a :href="pr.link" target="_blank" class="hover:underline text-blue-600">{{ pr.title }}</a></h3>
+              <h3 class="font-semibold"><a :href="pr.link" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-600">{{ pr.title }}</a></h3>
             <p class="text-sm">{{ pr.description }}</p>
           </div>
         </div>
