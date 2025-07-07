@@ -44,7 +44,6 @@ AI role
 ## 스크린샷
 프로필 예시는 저장소의 `profile.jpg` 파일을 사용합니다.
 
-![screenshot](profile.jpg)
 
 ## 설치 방법
 ```bash
